@@ -1,0 +1,127 @@
+<div 
+  style="text-align: center; margin-left: 10%; margin-right: 10%; padding: 10px"
+>
+  <div *ngIf="isLoading === false">
+    <h2
+      style="color:blanchedalmond; text-shadow: 3px 9px 7px rgb(108, 110, 109)"
+    >
+      ONLINE AIR MEASUREMENT STATIONS LIST<br />
+      DATE:
+      {{ msDate | date: "yyyy-MM-dd HH:ss" }}
+    </h2>
+
+  </div>
+  <div
+    style="margin-left: 45%; margin-right: 40%"
+    id="spinner"
+    class="spinner-border"
+    role="status"
+    *ngIf="isLoading"
+  >
+    <img class="img-center" src="assets/sunGt.png" />
+  </div>
+
+  <img *ngIf="isLoading" class="load" src="assets/loadOnline.gif" />
+</div>
+
+<div *ngIf="onlineMeasurementList.length > 0">
+  <div class="filter-header">
+    <mat-form-field>
+      <input
+        matInput
+        (keyup)="applyFilter($event.target.value)"
+        placeholder="Filter"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+    <mat-paginator
+      style="background-color:transparent;"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    ></mat-paginator>
+    <!-- dodać PIPE SORTCITYS -->
+    <mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Station ID</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stationCity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >City</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.stationCity }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stationName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Name</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.stationName }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stationStreet">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Street</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.stationStreet }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stationDistrict">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >District</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.stationDistrict }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stationVoivodeship">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Voivodeship</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.stationVoivodeship }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="gegrLatitude">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Latiude</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.gegrLatitude }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="gegrLongitude">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Longtitude</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.gegrLongitude }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row
+        *matHeaderRowDef="createDisplayedColumns()"
+      ></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: createDisplayedColumns()"
+        matRipple
+        class="element-row"
+      ></mat-row>
+    </mat-table>
+  </div>
+  <ng-template #tpl let-mStDetails>
+    <!-- <div
+      style=" display: inline;"
+      class="mat-row detail-row"
+      [@detailExpand]
+    >
+      <td>
+        <app-onlinemeasurements-details-air [airMst]="mStDetails.airMs">
+        </app-onlinemeasurements-details-air>
+      </td>
+      <td *ngIf="mStDetails.synopticMs!=null">
+        <app-onlinemeasurements-details-syn
+        [synopticMst]="mStDetails.synopticMs"
+      >
+      </app-onlinemeasurements-details-syn>
+      </td>
+    </div> -->
+  </ng-template>
+</div>
