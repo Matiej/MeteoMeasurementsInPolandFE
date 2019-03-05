@@ -1,23 +1,28 @@
-import { DataEmitService } from './services/dataEmit.service';
-import { Component, OnInit, EventEmitter } from '@angular/core';
-
+import { DataEmitService } from "./services/dataEmit.service";
+import {
+  Component,
+  AfterViewInit
+} from "@angular/core";
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements  AfterViewInit {
+  title = "meteoMatiejFE";
+  bodyC: string = "bodyW";
 
-  title = 'meteoMatiejFE';
-  bodyC: string = "";
-  
-	constructor(private dataService: DataEmitService) {
+  constructor(private dataService: DataEmitService) {}
+
+  ngAfterViewInit(): void {
+    this.currentMessage();
   }
 
-  ngOnInit(): void {
+  private currentMessage() {
     this.dataService.currentMessage.subscribe(t => {
-      this.bodyC = t;
+      setTimeout(() => {
+        this.bodyC = t;
+      });
     });
   }
-  
 }

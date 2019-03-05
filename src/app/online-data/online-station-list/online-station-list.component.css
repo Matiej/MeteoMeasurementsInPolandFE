@@ -16,6 +16,35 @@ tr {
     border-radius: 50%;
   }
 
+  .img-center {
+    display: block;
+   
+    width: 200%;
+    border-radius: 50%;
+  }
+  
+  .table-odd {
+    border: 5px solid rgb(39, 39, 228);
+    margin-block-end: 6px;
+  }
+  
+  .table-ev {
+    border: 5px solid rgb(13, 13, 93);
+    margin-block-end: 6px;
+  }
+
+  .spinner-border1 {
+    display: inline-block;
+    width: spinner-width;
+    height: spinner-height;
+    vertical-align: text-bottom;
+    border: spinner-border-width solid currentColor;
+    border-right-color: transparent;
+    /* // stylelint-disable-next-line property-blacklist */
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+  }
+
 .load {
   display: block;
   margin-left: auto;
@@ -69,6 +98,7 @@ tr {
 
 .mat-table {
   overflow: auto;
+  color: white;
   max-height: 450px;
   background-color: transparent;
   text-align: center;

@@ -84,11 +84,10 @@
         >
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content
-      [ngClass]="bodyC"
-      style="text-align: center;"
-      fxFlexFill
-    > 
+    <mat-sidenav-content 
+    style="text-align: center;" 
+    fxFlexFill
+    [ngClass.lg]="bodyC">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

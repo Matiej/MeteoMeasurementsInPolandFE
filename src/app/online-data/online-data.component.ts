@@ -19,6 +19,7 @@ export class OnlineDataComponent implements OnInit{
   }
 
   onBodyNotify(childBodyNotify: string): void {
+    console.log('childbodynoty ' + childBodyNotify);
     this.dataService.changeMessage(childBodyNotify);
   }
 

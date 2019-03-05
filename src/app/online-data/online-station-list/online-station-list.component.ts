@@ -7,14 +7,14 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
 @Component({
   selector: 'app-online-station-list',
   templateUrl: './online-station-list.component.html',
+  styleUrls: ['./online-station-list.component.css'],
   animations: [
     trigger('detailExpand', [
       state('void', style({ height: '0px', minHeight: '0', visibility: 'hidden' })),
       state('*', style({ height: '*', visibility: 'visible' })),
       transition('void <=> *', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
-  ],
-  styleUrls: ['./online-station-list.component.css']
+  ]
 })
 export class OnlineStationListComponent implements OnInit {
 
@@ -34,13 +34,13 @@ export class OnlineStationListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.childBodyNotify.emit('bodyB');
     this.isLoading = true;
     this.service.getAllOnlineMeasuringStationList().subscribe((stations:  Array<OnlineMeasurement>) => {
       this.onlineMeasurementList = stations;
       this.dataSource = new MatTableDataSource(this.onlineMeasurementList);
       this.isLoading = false;
     });
-    this.childBodyNotify.emit('bodyB');
   }
 
   

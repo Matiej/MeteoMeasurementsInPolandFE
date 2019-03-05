@@ -14,11 +14,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     left: 0;
     right: 0;
     margin: auto;
-    animation: spinner-border .90s linear infinite;
+    /* animation: spinner-border .90s linear infinite; */
   }
-
-html, body { height: 100%; margin: 0; }
-body { margin: 0; font-family: Roboto; }
 
 .bodyB {
   font-family: "Lato", sans-serif;
@@ -43,10 +40,33 @@ body { margin: 0; font-family: Roboto; }
   background-attachment: fixed;
 }
 
-.bodyW {
+.home {
   background-color:white;
   background-size: auto;
   background-attachment: fixed;
   height: 100%; 
   margin: 0;
+}
+
+ .online-stations {
+  font-family: "Lato", sans-serif;
+  background: #cfe7fa; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #bdd3e6 59%,
+    #6393c1 50%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #c2d6e6 31%,
+    #6393c1 50%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #2886d3 10%,
+    #6393c1 30%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-size: auto;
+  background-attachment: fixed;
 }

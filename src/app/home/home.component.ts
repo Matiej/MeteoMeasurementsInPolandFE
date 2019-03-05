@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { DataEmitService } from '../services/dataEmit.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { DataEmitService } from '../services/dataEmit.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dataEmit: DataEmitService) { }
+
+  constructor(private dataEmit: DataEmitService) {
+    
+   }
 
   ngOnInit() {
     this.dataEmit.changeMessage("bodyW");
