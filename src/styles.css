@@ -40,7 +40,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-attachment: fixed;
 }
 
-.home {
+.bodyW {
   background-color:white;
   background-size: auto;
   background-attachment: fixed;
@@ -48,25 +48,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 0;
 }
 
- .online-stations {
-  font-family: "Lato", sans-serif;
-  background: #cfe7fa; /* Old browsers */
-  background: -moz-linear-gradient(
-    -45deg,
-    #bdd3e6 59%,
-    #6393c1 50%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #c2d6e6 31%,
-    #6393c1 50%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    #2886d3 10%,
-    #6393c1 30%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+.bodyR {
+  background: rgb(75, 7, 7);
+
+  background: radial-gradient(
+    circle,
+    rgba(75, 7, 7, 1) 0%,
+    rgba(13, 11, 12, 0.9668242296918768) 43%
+  );
+  /* background-repeat: no-repeat; */
   background-size: auto;
   background-attachment: fixed;
+}
+
+.bodyForest {
+  background: url(/assets/back/forest_a.jpg) no-repeat center center fixed;
+  /* background-size: fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }

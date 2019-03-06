@@ -47,6 +47,8 @@ import { HistoricalDataComponent } from "./historical-data/historical-data.compo
 import { OnlineDataComponent } from "./online-data/online-data.component";
 import { OnlineStationListComponent } from "./online-data/online-station-list/online-station-list.component";
 import { HttpClientModule } from "@angular/common/http";
+import { OnlineCityComponent } from './online-data/online-city/online-city.component';
+import { OnlineCityListComponent } from './online-data/online-city-list/online-city-list.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     HistoricalDataComponent,
     OnlineDataComponent,
-    OnlineStationListComponent
+    OnlineStationListComponent,
+    OnlineCityComponent,
+    OnlineCityListComponent
   ],
   imports: [
     HttpClientModule,

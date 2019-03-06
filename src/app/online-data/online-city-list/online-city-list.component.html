@@ -1,0 +1,23 @@
+<div
+  style="text-align: center; margin-left: 10%; margin-right: 10%; padding: 10px"
+>
+  <div *ngIf="isLoading === false">
+    <h2
+      style="color:blanchedalmond; text-shadow: 3px 9px 7px rgb(108, 110, 109)"
+    >
+      CITIES COVERED BY MEASUREMENTS
+    </h2>
+  </div>
+  <div
+    style="margin-left: 45%; margin-right: 40%"
+    id="spinner"
+    role="status"
+    class="spinner-border"
+    *ngIf="isLoading"
+  >
+    <img class="img-center" src="assets/sunGt.png" />
+  </div>
+  <img *ngIf="isLoading" class="load" src="assets/loadOnline.gif" />
+
+</div>
+>
