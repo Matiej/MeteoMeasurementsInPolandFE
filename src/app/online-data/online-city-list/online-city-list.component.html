@@ -18,6 +18,71 @@
     <img class="img-center" src="assets/sunGt.png" />
   </div>
   <img *ngIf="isLoading" class="load" src="assets/loadOnline.gif" />
-
 </div>
->
+<div *ngIf="cityList.length > 0">
+  <div class="filter-header">
+    <mat-form-field class="my-form-field">
+      <input
+        matInput
+        (keyup)="applyFilter($event.target.value)"
+        placeholder="Filter"
+      />
+    </mat-form-field>
+  </div>
+  <div class="table-container mat-elevation-z8">
+    <mat-paginator
+      style="background-color: white"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    >
+    </mat-paginator>
+
+    <mat-table [dataSource]="dataSource | citiesSorter" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >City name</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="airMeasurementList">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Air Measurement</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">
+          <p *ngIf="row.airMeasurementList.length > 0; else noAir">
+            <img src="/assets/checked26x26.png" />
+          </p>
+          <ng-template #noAir
+            ><img src="/assets/nonChecked26x26.png"
+          /></ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="synopticMeasurement">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Syn Measurement
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <p
+            *ngIf="row.synopticMeasurement != null; else noSyn"
+            appMstConfirmed
+          >
+            <img src="/assets/checked26x26.png" />
+          </p>
+          <ng-template #noSyn
+            ><img src="/assets/nonChecked26x26.png"
+          /></ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row
+        *matHeaderRowDef="createDisplayedColumns()"
+      ></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: createDisplayedColumns()"
+        matRipple
+        class="element-row"
+      ></mat-row>
+    </mat-table>
+  </div>
+</div>

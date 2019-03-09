@@ -92,4 +92,8 @@ export class SynopticMeasurement {
 	public set measurementHour(value: string) {
 		this._measurementHour = value;
 	}
+
+	public toString = (): string => {
+		return this.cityName;
+	}
 }

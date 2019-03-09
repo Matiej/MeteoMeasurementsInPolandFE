@@ -49,6 +49,9 @@ import { OnlineStationListComponent } from "./online-data/online-station-list/on
 import { HttpClientModule } from "@angular/common/http";
 import { OnlineCityComponent } from './online-data/online-city/online-city.component';
 import { OnlineCityListComponent } from './online-data/online-city-list/online-city-list.component';
+import { StationsPipe } from './shared/stations.pipe';
+import { CitiesSorterPipe } from './shared/cities-sorter.pipe';
+import { MstConfirmedDirective } from './shared/mst-confirmed.directive';
 
 @NgModule({
   declarations: [
@@ -58,9 +61,13 @@ import { OnlineCityListComponent } from './online-data/online-city-list/online-c
     OnlineDataComponent,
     OnlineStationListComponent,
     OnlineCityComponent,
-    OnlineCityListComponent
+    OnlineCityListComponent,
+    StationsPipe,
+    CitiesSorterPipe,
+    MstConfirmedDirective
   ],
   imports: [
+
     HttpClientModule,
     NgbModule,
     BrowserModule,
@@ -106,6 +113,7 @@ import { OnlineCityListComponent } from './online-data/online-city-list/online-c
   ],
 
   exports: [
+   
     BrowserModule,
     NgbModule,
     AppRoutingModule,

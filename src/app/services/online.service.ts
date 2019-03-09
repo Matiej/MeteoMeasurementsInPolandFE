@@ -14,4 +14,8 @@ export class OnlineService {
   getAllOnlineMeasuringStationList(): Observable<any> {
     return this.http.get(this.baseUrl + "/allSt");
   }
+
+  getAllOnlineCities(): Observable<any> {
+    return this.http.get(this.baseUrl+"//allCities");
+  }
 }

@@ -1,4 +1,4 @@
-<div 
+<div
   style="text-align: center; margin-left: 10%; margin-right: 10%; padding: 10px"
 >
   <div *ngIf="isLoading === false">
@@ -9,7 +9,6 @@
       DATE:
       {{ msDate | date: "yyyy-MM-dd HH:ss" }}
     </h2>
-
   </div>
   <div
     style="margin-left: 45%; margin-right: 40%"
@@ -21,7 +20,7 @@
     <img class="img-center" src="assets/sunGt.png" />
   </div>
 
-  <img *ngIf="isLoading" class="load" src="assets/loadOnline.gif" />
+  <img *ngIf="isLoading" class="load" style="width: 40%" src="assets/loadOnline.gif" />
 </div>
 
 <div *ngIf="onlineMeasurementList.length > 0">
@@ -40,10 +39,12 @@
       style="background-color:transparent;"
       [pageSizeOptions]="[5, 10, 25, 100]"
     ></mat-paginator>
-    <!-- dodać PIPE SORTCITYS -->
-    <mat-table [dataSource]="dataSource" matSort>
+  
+    <mat-table [dataSource]="dataSource | stationsSorter" matSort>
       <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Station ID</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Station ID</mat-header-cell
+        >
         <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
       </ng-container>
 

@@ -8,6 +8,7 @@ import {
   EventEmitter
 } from "@angular/core";
 import { OnlineStationListComponent } from "./online-station-list/online-station-list.component";
+import { City } from '../model/city';
 
 @Component({
   selector: "app-online-data",
@@ -18,6 +19,7 @@ export class OnlineDataComponent implements OnInit {
   onlineBody: string = "";
   isCityList: boolean = false;
   isStationList: boolean = false;
+  isRightSideShow: boolean = false;
 
   constructor(private dataService: DataEmitService) {}
 
@@ -47,5 +49,9 @@ export class OnlineDataComponent implements OnInit {
     if(this.isStationList == true){
       this.isStationList = false;
     }
+  }
+
+  onFillListRightSide(isCity: boolean): void {
+      this.isRightSideShow = isCity;
   }
 }
