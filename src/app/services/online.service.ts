@@ -1,6 +1,8 @@
+import { City } from './../model/city';
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { OnlineMeasurement } from '../model/onlineMeasurement';
 
 @Injectable({
   providedIn: "root"
@@ -11,11 +13,11 @@ export class OnlineService {
 
   constructor(private http: HttpClient) {}
 
-  getAllOnlineMeasuringStationList(): Observable<any> {
-    return this.http.get(this.baseUrl + "/allSt");
+  getAllOnlineMeasuringStationList(): Observable<Array<OnlineMeasurement>> {
+    return this.http.get<Array<OnlineMeasurement>>(this.baseUrl + "/allSt");
   }
 
-  getAllOnlineCities(): Observable<any> {
-    return this.http.get(this.baseUrl+"//allCities");
+  getAllOnlineCities(): Observable<Array<City>> {
+    return this.http.get<Array<City>>(this.baseUrl+"//allCities");
   }
 }
