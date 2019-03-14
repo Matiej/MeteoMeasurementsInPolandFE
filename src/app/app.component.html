@@ -1,5 +1,5 @@
-<div style="height: 100vh;">
-  <mat-toolbar style="background-color: grey">
+<div style="height: calc(100vh - 24px)">;
+  <mat-toolbar class= "fixed-header" style="background-color: grey">
     <mat-toolbar-row>
       <button
         mat-icon-button
@@ -86,6 +86,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content 
+    
     style="text-align: center;" 
     fxFlexFill
     [ngClass]="bodyC"

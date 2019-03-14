@@ -14,7 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     left: 0;
     right: 0;
     margin: auto;
-    /* animation: spinner-border .90s linear infinite; */
+    animation: spinner-border .90s linear infinite;
   }
 
 .bodyB {
@@ -62,11 +62,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .bodyForest {
-  background: url(/assets/back/forest_a.jpg) no-repeat center center fixed;
+  background: url(/assets/back/forest_a.jpg) no-repeat center center;
   /* background-size: fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  /* background-size: auto; */
 }
 
 

@@ -7,7 +7,6 @@ export class DetailRowDirective {
   private row: any;
   private tRef: TemplateRef<any>;
   private opened: boolean;
-  
   constructor(public vcRef: ViewContainerRef) { }
 
   @HostBinding('class.expanded')
@@ -26,7 +25,6 @@ export class DetailRowDirective {
   set template(value: TemplateRef<any>) {
     if (value !== this.tRef) {
       this.tRef = value;
-    
     }
   }
 
@@ -50,5 +48,4 @@ export class DetailRowDirective {
       this.vcRef.createEmbeddedView(this.tRef, { $implicit: this.row });
     }
   }
-
 }

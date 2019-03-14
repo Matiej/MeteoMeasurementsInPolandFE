@@ -52,6 +52,9 @@ import { OnlineCityListComponent } from './online-data/online-city-list/online-c
 import { StationsPipe } from './shared/stations.pipe';
 import { CitiesSorterPipe } from './shared/cities-sorter.pipe';
 import { MstConfirmedDirective } from './shared/mst-confirmed.directive';
+import { OnlineStationAirComponent } from './online-data/online-station-list/online-station-air/online-station-air.component';
+import { OnlineStationSynComponent } from './online-data/online-station-list/online-station-syn/online-station-syn.component';
+import { DetailRowDirective } from './shared/detail-row.directive';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,10 @@ import { MstConfirmedDirective } from './shared/mst-confirmed.directive';
     OnlineCityListComponent,
     StationsPipe,
     CitiesSorterPipe,
-    MstConfirmedDirective
+    MstConfirmedDirective,
+    OnlineStationAirComponent,
+    OnlineStationSynComponent,
+    DetailRowDirective
   ],
   imports: [
 

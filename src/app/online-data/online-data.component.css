@@ -9,11 +9,9 @@ tr {
   border: 1px solid gray;
 }
 
-.img-center {
-  display: block;
-
+.sun-center {
   width: 200%;
-  border-radius: 50%;
+  border-radius: 60%;
 }
 
 .table-odd {
@@ -27,11 +25,12 @@ tr {
 }
 
 .load {
-  display: block;
+  /* display: block; */
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20%;
   width: 80%;
-  margin-top: 10%;
+  
   animation: spinner-grow 0.95s linear;
 }
 

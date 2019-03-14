@@ -1,0 +1,49 @@
+<table style="text-align: center">
+    <thead>
+      <tr>
+        <th colspan="6">{{ title }}</th>
+      </tr>
+      <tr>
+        <th>Station ID</th>
+        <th>Measurement date</th>
+        <th>Save date</th>
+        <th>Air quality</th>
+        <th>stIndexLevel</th>
+        <th>so2IndexLevel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ airMst.foreignId }}</td>
+        <td>{{ airMst.measurementDate }}</td>
+        <td>{{ airMst.saveDate }}</td>
+        <td [ngClass]="airMst.airQuality">{{ airMst.airQuality }}</td>
+        <td>{{ airMst.stIndexLevel }}</td>
+        <td>{{ airMst.so2IndexLevel }}</td>
+      </tr>
+    </tbody>
+  
+    <thead>
+      <tr>
+        <th colspan="6">{{ title2 }}</th>
+      </tr>
+      <tr>
+        <th>no2IndexLevel</th>
+        <th>coIndexLevel</th>
+        <th>pm10IndexLevel</th>
+        <th>pm25IndexLevel</th>
+        <th>o3IndexLevel</th>
+        <th>c6h6IndexLevel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ airMst.no2IndexLevel }}</td>
+        <td>{{ airMst.coIndexLevel }}</td>
+        <td>{{ airMst.pm10IndexLevel }}</td>
+        <td>{{ airMst.pm25IndexLevel }}</td>
+        <td>{{ airMst.o3IndexLevel }}</td>
+        <td>{{ airMst.c6h6IndexLevel }}</td>
+      </tr>
+    </tbody>
+  </table>

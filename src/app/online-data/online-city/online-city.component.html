@@ -1,4 +1,27 @@
 <div>
-  <img src="/assets/moto-hero.png" alt="MOTO GUZZI">
-  <p style="font-size: 33px; color:white">MOTO GUZZI - MY LOVE</p>
+  
+  <div style="color: teal" *ngIf="isCity">
+    <div *ngIf="newCity.airMeasurementList.length>0">
+      <h3 style="color: greenyellow">City: {{newCity.name}}</h3>
+    <p style="color: wheat">Air measurements</p>
+    <ul *ngFor="let air of newCity.airMeasurementList">
+      <li>Air station ID: {{air.foreignId}}</li>
+      <li>Date: {{air.measurementDate}}</li>
+      <li>Air quality: {{air.airQuality}}</li>
+    </ul>
+  </div>
+  <div [hidden]="newCity.synopticMeasurement == null">
+    <p style="color: wheat">Synoptic measurements</p>
+    <p>City name: {{newCity.synopticMeasurement.cityName}}</p>
+    <p>Temperature: {{newCity.synopticMeasurement.temperature}}</p>
+    <p>Humidity: {{newCity.synopticMeasurement.airHumidity}}</p>
+    <p>Wind speed: {{newCity.synopticMeasurement.windSpeed}}</p>
+    <p>Presure: {{newCity.synopticMeasurement.pressure}}</p>
+  </div>
+  </div>
+  <div *ngIf="!isCity">
+      <img src="/assets/moto-hero.png" alt="MOTO GUZZI">
+      <p style="font-size: 33px; color:white">MOTO GUZZI - MY LOVE</p>
+  </div>
+  
 </div>

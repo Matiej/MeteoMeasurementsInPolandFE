@@ -15,7 +15,7 @@
     class="spinner-border"
     *ngIf="isLoading"
   >
-    <img class="img-center" src="assets/sunGt.png" />
+    <img class="sun-center" src="assets/sunGt.png" />
   </div>
   <img *ngIf="isLoading" class="load" src="assets/loadOnline.gif" />
 </div>
@@ -82,6 +82,7 @@
         *matRowDef="let row; columns: createDisplayedColumns()"
         matRipple
         class="element-row"
+        (click)="getCity(row)"
       ></mat-row>
     </mat-table>
   </div>

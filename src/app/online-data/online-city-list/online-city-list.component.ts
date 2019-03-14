@@ -17,6 +17,7 @@ import {
   style
 } from "@angular/animations";
 import { getInjectionTokens } from "@angular/core/src/render3/discovery_utils";
+import { DataEmitService } from 'src/app/services/dataEmit.service';
 
 @Component({
   selector: "app-online-city-list",
@@ -50,9 +51,10 @@ export class OnlineCityListComponent implements OnInit, AfterViewInit {
   paginator: MatPaginator;
   @ViewChild(MatSort)
   sort: MatSort;
+
   isExpasionDetailRow = (idex, row) => row.hasOwnProperty("detailRow");
 
-  constructor(private service: OnlineService) {
+  constructor(private service: OnlineService, private dataEmitservice: DataEmitService) {
     this.dataSource = new MatTableDataSource([]);
   }
 
@@ -88,6 +90,8 @@ export class OnlineCityListComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue;
   }
 
-
-
+  getCity(city: City) {
+    console.log('CCCccc ' + city.name)
+    this.dataEmitservice.changeCity(city);
+  }
 }

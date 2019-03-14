@@ -1,24 +1,28 @@
-<button type="button" class="btn btn-primary" (click)="onStationsButton()">
-  STATIONS
-</button>
-<button type="button" class="btn btn-info" (click)="onCityButton()">
-  CITIES
-</button>
-
-<div *ngIf="isStationList">
-  <app-online-station-list
-    (childBodyNotify)="onBodyNotify($event)"
-  ></app-online-station-list>
+<div style="position: relative; top: 50px; ">
+  <button type="button" class="btn btn-primary" (click)="onStationsButton()">
+    STATIONS
+  </button>
+  <button type="button" class="btn btn-info" (click)="onCityButton()">
+    CITIES
+  </button>
 </div>
 
-<div *ngIf="isCityList">
-  <div style="display: inline-block; width: 50%">
-    <app-online-city-list
+<div style="position: relative; top: 150px; ">
+  <div *ngIf="isStationList">
+    <app-online-station-list
       (childBodyNotify)="onBodyNotify($event)"
-      (isCities)="onFillListRightSide($event)"
-    ></app-online-city-list>
+    ></app-online-station-list>
   </div>
-  <div style="display: inline-block; width: 50%" *ngIf="isRightSideShow">
-    <app-online-city></app-online-city>
+
+  <div *ngIf="isCityList">
+    <div style="display: inline-block; width: 50%">
+      <app-online-city-list
+        (childBodyNotify)="onBodyNotify($event)"
+        (isCities)="onFillListRightSide($event)"
+      ></app-online-city-list>
+    </div>
+    <div style="display: inline-block; width: 50%" *ngIf="isRightSideShow">
+      <app-online-city></app-online-city>
+    </div>
   </div>
 </div>

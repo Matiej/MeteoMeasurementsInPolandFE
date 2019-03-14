@@ -1,0 +1,32 @@
+<table style="text-align: center">
+    <thead>
+      <tr>
+        <th colspan="8">{{ title }}</th>
+      </tr>
+      <tr>
+        <th>Station ID</th>
+        <th>City</th>
+        <th>Save date</th>
+        <th>Measurement Date</th>
+        <th>Temperature</th>
+        <th>Wind speed</th>
+        <th>Air humidity</th>
+        <th>Pressure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>{{ synopticMst.foreignId }}</td>
+      <td>{{ synopticMst.cityName }}</td>
+      <td>{{ synopticMst.saveDate }}</td>
+      <td>
+        {{ synopticMst.measurementDate }} T {{ synopticMst.measurementHour }}:00
+      </td>
+      <td>{{ synopticMst.temperature }}</td>
+      <td>{{ synopticMst.windSpeed }}</td>
+      <td>{{ synopticMst.airHumidity }}</td>
+      <td>{{ synopticMst.pressure }}</td>
+    </tr>
+    </tbody>
+  </table>
+  
